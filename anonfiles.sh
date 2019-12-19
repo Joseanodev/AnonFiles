@@ -5,7 +5,7 @@
 #
 # Versão:	v1.0
 #
-# Data:		01-12-2019
+# Data:		19-12-2019
 #
 #
 # Descrição:	Sobe arquivo para AnonFiles.com e gera URL para download
@@ -13,9 +13,16 @@
 #
 # Uso:		anonfiles [-fu] [ARQUIVO]
 
-readonly _AUTHOR="Joseano Sousa"
-readonly _VERSION=1.0
+readonly author="Joseano Sousa"
+readonly version=1.0
 
+# Dependências
+packages=(jq curl)
+for pkg in "${packages[@]}"; do
+	[[ $(which $pkg) ]] || echo "Erro: requer pacote '$pkg' instalado." && exit 1
+done
+
+# Sobe arquivo para AnonFiles se existir
 upload_file_url() {
 	file=$OPTARG
 	if [[ -a $file ]]; then
@@ -51,12 +58,12 @@ while getopts ':f:u:hv' options; do
 			echo -e "\n\tStatus de saída:"
 			echo -e "\tRetorna sucesso, se o ARQUIVO existir; falha, se não existir." ;;
 		v) # Versão
-			echo "$0 (GPLv3) v${_VERSION}"
-			echo "Copyright (C) 2019 - ${AUTHOR}"
+			echo "$0 (GPLv3) v${version}"
+			echo "Copyright (C) 2019 - ${author}"
 			echo "Licença GPLv3+: GNU GPL versão 3 ou posterior <http://gnu.org/licenses/gpl.html>."
 			echo -e "\nGitHub:\t\thttps://github.com/Joseanodev/AnonFiles"
 			echo -e "Telegram:\t@joseanodev(https://t.me/joseanodev)"
-			echo -e "Desenvolvedor:\t${AUTHOR} <joseanodev@gmail.com>"
+			echo -e "Desenvolvedor:\t${author} <joseanodev@gmail.com>"
 			echo -e "\nEste é um software livre; você é livre para alterar e redistribuí-lo."
 			echo -e "Há NENHUMA GARANTIA, na extensão permitida pela lei." ;;
 		':') echo -e "$0: -$OPTARG: requer argumento\nTente \"$0 -h\" para mais informações." && false ;;
