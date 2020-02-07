@@ -1,7 +1,5 @@
 # AnonFiles v1.0
 
-![Logo AnonFiles](images/logo-anonfiles.png)
-
 Programa linha de comando, sobe arquivo para AnonFiles.com e gera URL para donwload  
 Podendo subir arquivos de até 5GB.
 
