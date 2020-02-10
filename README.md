@@ -5,9 +5,10 @@ Podendo subir arquivos de até 5GB.
 
 ## Requerimentos
 
-| Bibliotecas | Descrição |
-|-------------|-----------|
+| Dependências | Descrição |
+| --- | :---: |
 | requests | Requests é uma biblioteca HTTP licensiada sob Apache2, escrita em Python, para seres humanos. |
+| python | Python é uma linguagem de programação interpretada, interativa e orientada a objetos que combina um poder notável com uma sintaxe muito clara. |
 
 >Certifique-se que todas as bibliotecas estão instaladas.
 
