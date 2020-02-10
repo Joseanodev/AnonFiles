@@ -1,12 +1,12 @@
-# AnonFiles v1.0
+# AnonFiles v1.0.0
 
 Programa linha de comando, sobe arquivo para AnonFiles.com e gera URL para donwload  
 Podendo subir arquivos de até 5GB.
 
 ## Requerimentos
 
-| Bibliotecas  | Descrição |
-|----------|-------------|
+| Bibliotecas | Descrição |
+|-|-|
 | requests | Requests é uma biblioteca HTTP licensiada sob Apache2, escrita em Python, para seres humanos. |
 
 >Certifique-se que todas as bibliotecas estão instaladas.
@@ -22,4 +22,3 @@ Para instalá-lo imediatamente para todos os usuários UNIX (Linux, macOS etc.),
 
 **Desenvolvedor:** Joseano Sousa  
 **E-mail:** joseanodev@gmail.com  
-**Telegram:** [@joseanodev](https://t.me/joseanodev)
