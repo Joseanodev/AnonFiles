@@ -15,7 +15,7 @@ Podendo subir arquivos de até 5GB.
 
 Para instalá-lo imediatamente para todos os usuários UNIX (Linux, macOS etc.), digite:
 
-	sudo wget https://raw.githubusercontent.com/Joseanodev/AnonFiles/master/anonfile.sh -O /usr/local/bin/anonfiles
+	sudo wget https://raw.githubusercontent.com/Joseanodev/AnonFiles/master/anonfile.py -O /usr/local/bin/anonfiles
 	sudo chmod a+rx /usr/local/bin/anonfiles
 
 ## Contatos
