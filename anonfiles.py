@@ -1,15 +1,15 @@
-#!/usr/bin/env python3
-# -*- coding: UTF-8 -*-
+#!/usr/bin/env python3.8
 #
 # Program: anonfiles.py
 #
 # Autor:	Joseano Sousa
+#
 # Versão:	v1.0
+#
 # Data:		19-12-2019
 #
-# Descrição:
-#	Sobe arquivo para AnonFiles.com e gera URL para download
-#	Podendo subir arquivo de até 5GB.
+# Descrição:    Sobe arquivo para AnonFiles.com e gera URL para download
+#               Podendo subir arquivo de até 5GB.
 #
 
 import argparse
@@ -17,21 +17,21 @@ from sys import exit, version_info
 from os.path import expanduser
 
 # Verifica versão do Python
-if version_info[:2] < (3, 7):
-	exit("Erro: requer versão 'Python 3.7' instalada.")
+if version_info[:2] < (3, 8):
+    exit("Erro: requer versão 'Python 3.8' instalada.")
 
 # Verifica dependências
 try:
-	from requests import post
+    from requests import post
 except:
-	exit("Erro: requer módulo 'requests' instalado.")
+    exit("Erro: requer módulo 'requests' instalado.")
 
 # Sobe arquivo
 def upload_file():
-	global json_info, url
-	upload_file = post('https://api.anonfiles.com/upload', files={'file': args.file})
-	json_info = upload_file.json()
-	url = json_info['data']['file']['url']['full']
+    global json_info, url
+    upload_file = post('https://api.anonfiles.com/upload', files={'file': args.file})
+    json_info = upload_file.json()
+    url = json_info['data']['file']['url']['full']
 
 # Analisando argumentos
 parser = argparse.ArgumentParser(prog='anonfiles', description='Sobe arquivo para AnonFiles.com e gera URL para download\nPodendo subir arquivo de até 5GB.', epilog='Status de saída:\nRetorna sucesso, se o ARQUIVO existir; falha, se não existir.', formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -46,10 +46,10 @@ args = parser.parse_args()
 
 # Trata os argumentos
 if args.verbosity:
-	upload_file()
-	file_name = json_info['data']['file']['metadata']['name']
-	file_size = json_info['data']['file']['metadata']['size']['readable']
-	print(f'Arquivo: [ {file_name} ]\nTamanho: [ {file_size} ]\nURL: {url}')
+    upload_file()
+    file_name = json_info['data']['file']['metadata']['name']
+    file_size = json_info['data']['file']['metadata']['size']['readable']
+    print(f'Arquivo: [ {file_name} ]\nTamanho: [ {file_size} ]\nURL: {url}')
 else:
-	upload_file()
-	print(url)
+    upload_file()
+    print(url)
