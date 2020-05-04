@@ -1,15 +1,15 @@
-#!/usr/bin/env python3.8
+#!/usr/bin/env python3  
 #
-# Program: anonfiles.py
+#   Program:        anonfiles.py
 #
-# Autor:	Joseano Sousa
+#   Author:         Joseano Sousa
 #
-# Versão:	v1.0
+#   Version:        v1.0
 #
-# Data:		19-12-2019
+#   Date:           19-12-2019
 #
-# Descrição:    Sobe arquivo para AnonFiles.com e gera URL para download
-#               Podendo subir arquivo de até 5GB.
+#   Description:    Sobe arquivo para AnonFiles.com e gera URL para download
+#                   Podendo subir arquivo de até 5GB.
 #
 
 import argparse
@@ -17,14 +17,14 @@ from sys import exit, version_info
 from os.path import expanduser
 
 # Verifica versão do Python
-if version_info[:2] < (3, 8):
-    exit("Erro: requer versão 'Python 3.8' instalada.")
+if version_info[:2] < (3, 6):
+    exit("Erro: requer versão 'Python 3.6+' instalada.")
 
 # Verifica dependências
 try:
     from requests import post
 except:
-    exit("Erro: requer módulo 'requests' instalado.")
+    exit("Erro: requer biblioteca 'requests' instalada.")
 
 # Sobe arquivo
 def upload_file():
